@@ -40,13 +40,20 @@ El objetivo principal es hacer uso de un cluster de procesamiento utilizando \em
 \section{Ambiente de desarrollo}
 \begin{itemize}
   \item Sistema operativo utilizado: Linux Ubuntu 16.04 LTS
-  \item RVM (Ruby Version Manager) versi\'on 1.27.0
-  \item Ruby versi\'on 2.3.3
+  \item Python versi\'on 2.7.12
   \item Docker versi\'on 1.5.2
   \item Hadoop versi\'on 2.7
 \end{itemize}
 
 \section{Estructuras de datos usadas y funciones}
+\subsection{Mapper}
+Se realizan operaciones sobre strings para obtener ngrams l\'inea por l\'inea. Luego se realiza una impresi\'on del ngram en la salida est\'andar con el formato:
+\begin{itemize}
+  \item \emph{ngram ngram\_count}
+\end{itemize}
+Con \emph{ngram\_count \= 1}. Dichos datos son usados como la entrada del \emph{reducer}.
+\subsection{Reducer}
+Se leen las impresiones y nuevamente se utilizan operaciones sobre strings para realizar el conteo de los ngram repetidos y luego presentar un conteo final.
 
 \section{Instrucciones de ejecuci\'on'}
 Asumiendo que el ambiente de desarrollo est\'a listo, hay que seguir los siguientes pasos:
@@ -88,9 +95,10 @@ Asumiendo que el ambiente de desarrollo est\'a listo, hay que seguir los siguien
   \item 24-03-2017:
   \begin{itemize}
     \item 3 horas - start over con Python. Configuraci\'on de Docker y Pyton en Distelli (para deploy).
+    \item 2 horas - aclimatarme a Python. Cambiar contador de palabras de ejemplo a contador de ngrams.
   \end{itemize}
 \end{itemize}
-Total de horas trabajadas: 23 horas.
+Total de horas trabajadas: 25 horas.
 
 \section{Comentarios finales}
 \begin{itemize}
