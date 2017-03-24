@@ -1,0 +1,110 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{listings}
+
+\let\<\textless
+\let\>\textgreater
+
+\graphicspath{ {images/} }
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Tarea \#2}
+\rfoot{P\'agina \thepage}
+
+\begin{document}
+\begin{titlepage}
+  \centering
+  {\scshape\LARGE Instituto Tecnol\'ogico de Costa Rica \par}
+  \vspace{1cm}
+  {\scshape\Large Tarea \#2\par}
+  \vspace{1.5cm}
+  {\Large\itshape Sa\'ul Zamora\par}
+  \vfill
+  profesor\par
+  Kevin Moraga \textsc{}
+
+  \vfill
+
+% Bottom of the page
+  {\large \today\par}
+\end{titlepage}
+
+\section{Introducci\'on}
+Utilizando los datos de Google Books n-gram viewers; los cuales son tuplas de tama\~no fijo, que en este caso son palabras extra\'idas de los libros existentes en Google Books. La \emph{N} especifica el n\'umero de elementos en la tupla, as un 5-gram tiene 5 palabras. Los datos est\'an en texto plano en el siguiente formato:
+\begin{itemize}
+  \item \emph{ngram TAB year TAB match\_count TAB page\_count TAB volume\_count NEWLINE}
+\end{itemize}
+El objetivo principal es hacer uso de un cluster de procesamiento utilizando \emph{Kubernetes} y \emph{Docker} sobre el cual se lanzar\'an las instancias de \emph{Hadoop} que utilizan t\'ecnicas de \emph{MapReduce} para resolver consultas.
+
+\section{Ambiente de desarrollo}
+\begin{itemize}
+  \item Sistema operativo utilizado: Linux Ubuntu 16.04 LTS
+  \item RVM (Ruby Version Manager) versi\'on 1.27.0
+  \item Ruby versi\'on 2.3.3
+  \item Docker versi\'on 1.5.2
+  \item Hadoop versi\'on 2.7
+\end{itemize}
+
+\section{Estructuras de datos usadas y funciones}
+
+\section{Instrucciones de ejecuci\'on'}
+Asumiendo que el ambiente de desarrollo est\'a listo, hay que seguir los siguientes pasos:
+\begin{itemize}
+  \item Descargar el repo desde \texttt{https://github.com/aleks279/200835773-tarea2}
+  \item Navegar al folder \emph{200835773-tarea2}
+  \item Instalar la gema \emph{Bundler} usando el comando \emph{gem install bundler}
+  \item Instalar las dependencias (gemas) para la aplicaci\'on usando el comando \emph{bundle}
+  \item Para "construir" el contenedor de Docker hay que ejecutar el comando \emph{docker-compose build}
+  \item Para ejecutar la aplicaci\'on Ruby dentro del contenedor Docker ejecutar el comando \emph{docker-compose web up}
+  \item Alternativamente, para ejecutar la aplicaci\'on localmente fuera del contenedor Docker, ejecutar \emph{rails s}
+\end{itemize}
+
+\section{Bit\'acora de trabajo}
+\begin{itemize}
+  \item 15-03-2017:
+  \begin{itemize}
+    \item 1 hora - instalaci\'on de Docker.
+    \item 4 horas - configuraci\'on local de aplicaci\'on en Ruby on Rails, Docker y Heroku.
+  \end{itemize}
+  \item 17-03-2017:
+  \begin{itemize}
+    \item 4 horas - configuraci\'on local de aplicaci\'on en Ruby on Rails y Docker.
+  \end{itemize}
+  \item 18-03-2017:
+  \begin{itemize}
+    \item 2 horas - configuraci\'on local de Hadoop.
+    \item 1 hora - documentaci\'on.
+    \item 4 horas - investigaci\'on en MapReduce, Hadoop y Ruby con Rubydoop
+  \end{itemize}
+  \item 20-03-2017:
+  \begin{itemize}
+    \item 2 horas - refactor del app. Instalaci\'on de JRuby.
+  \end{itemize}
+  \item 22-03-2017:
+  \begin{itemize}
+    \item 2 horas - refactor. Sin \'exito. App compila y crea el .jar, pero genera errores al correr. Prueba con un contador de palabras simple.
+  \end{itemize}
+  \item 24-03-2017:
+  \begin{itemize}
+    \item 3 horas - start over con Python. Configuraci\'on de Docker y Pyton en Distelli (para deploy).
+  \end{itemize}
+\end{itemize}
+Total de horas trabajadas: 23 horas.
+
+\section{Comentarios finales}
+\begin{itemize}
+  \item Debido al horario laboral, la falta de tiempo fue una limitante y no fue posible realizar el cluster de Kubernetes. 
+\end{itemize}
+
+\section{Conclusiones}
+\begin{itemize}
+  \item La configuraci\'on inicial de Docker es \emph{overly complicated}.
+\end{itemize}
+
+\begin{thebibliography}{99}
+ \bibitem{herokuRails} Bourgau, P. (2017). How to boot a new Rails project with Docker and Heroku - Philippe Bourgau's blog. [online] Philippe.bourgau.net. Available at: \texttt{http://philippe.bourgau.net/how-to-boot-a-new-rails-project-with-docker-and-heroku/}
+ \bibitem{hadoop} Digitalocean.com. (2017). How to Install Hadoop in Stand-Alone Mode on Ubuntu 16.04 | DigitalOcean. [online] Available at: \texttt{https://www.digitalocean.com/community/tutorials/how-to-install-hadoop-in-stand-alone-mode-on-ubuntu-16-04}
+ \bibitem{rubyHadoop} GitHub. (2017). iconara/rubydoop. [online] Available at: \texttt{https://github.com/iconara/rubydoop}
+\end{thebibliography}
+\end{document}
