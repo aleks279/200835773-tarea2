@@ -60,11 +60,10 @@ Asumiendo que el ambiente de desarrollo est\'a listo, hay que seguir los siguien
 \begin{itemize}
   \item Descargar el repo desde \texttt{https://github.com/aleks279/200835773-tarea2}
   \item Navegar al folder \emph{200835773-tarea2}
-  \item Instalar la gema \emph{Bundler} usando el comando \emph{gem install bundler}
-  \item Instalar las dependencias (gemas) para la aplicaci\'on usando el comando \emph{bundle}
-  \item Para "construir" el contenedor de Docker hay que ejecutar el comando \emph{docker-compose build}
-  \item Para ejecutar la aplicaci\'on Ruby dentro del contenedor Docker ejecutar el comando \emph{docker-compose web up}
-  \item Alternativamente, para ejecutar la aplicaci\'on localmente fuera del contenedor Docker, ejecutar \emph{rails s}
+  \item El comando siguiente corre el proceso de MapReduce sin Hadoop:
+  \begin{itemize}
+    \item $cat\hspace{3mm}googlebooks-eng-all-4gram-20120701-zz\hspace{3mm}|\hspace{3mm}python\hspace{3mm}map\_reduce/mapper.py\hspace{3mm}|\hspace{3mm}sort\hspace{3mm}-k1,1\hspace{3mm}|\hspace{3mm}python\hspace{3mm}map\_reduce/reducer.py$
+  \end{itemize}
 \end{itemize}
 
 \section{Bit\'acora de trabajo}
