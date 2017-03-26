@@ -64,6 +64,10 @@ Asumiendo que el ambiente de desarrollo est\'a listo, hay que seguir los siguien
   \begin{itemize}
     \item $cat\hspace{3mm}googlebooks-eng-all-4gram-20120701-zz\hspace{3mm}|\hspace{3mm}python\hspace{3mm}map\_reduce/mapper.py\hspace{3mm}|\hspace{3mm}sort\hspace{3mm}-k1,1\hspace{3mm}|\hspace{3mm}python\hspace{3mm}map\_reduce/reducer.py$
   \end{itemize}
+  \item El comando siguiente corre el proceso de MapReduce con Hadoop:
+  \begin{itemize}
+    \item $hadoop\hspace{3mm}jar\hspace{3mm}/usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.7.3.jar\hspace{3mm}-mapper\hspace{3mm}map\_reduce/mapper.py\hspace{3mm}-reducer\hspace{3mm}map\_reduce/reducer.py\hspace{3mm}-input\hspace{3mm}data/googlebooks-eng-all-4gram-20120701-zz\hspace{3mm}-output\hspace{3mm}out$
+  \end{itemize}
 \end{itemize}
 
 \section{Bit\'acora de trabajo}
@@ -96,8 +100,12 @@ Asumiendo que el ambiente de desarrollo est\'a listo, hay que seguir los siguien
     \item 3 horas - start over con Python. Configuraci\'on de Docker y Pyton en Distelli (para deploy).
     \item 2 horas - aclimatarme a Python. Cambiar contador de palabras de ejemplo a contador de ngrams.
   \end{itemize}
+  \item 25-03-2017:
+  \begin{itemize}
+    \item 2 horas - pruebas con Hadoop y Python.
+  \end{itemize}
 \end{itemize}
-Total de horas trabajadas: 25 horas.
+Total de horas trabajadas: 27 horas.
 
 \section{Comentarios finales}
 \begin{itemize}
