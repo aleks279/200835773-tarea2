@@ -8,7 +8,9 @@ for line in sys.stdin:
     words = line.split()
     # get 4-ngram words
     ngram_words = words[:4]
+    match_count = words[6]
     # create 4-ngram string
     ngram = " ".join(ngram_words)
 
-    print '%s\t%s' % (ngram, 1)
+    if "," not in ngram:
+        print '%s\t%s' % (ngram, match_count)
